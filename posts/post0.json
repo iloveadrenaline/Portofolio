@@ -6,7 +6,7 @@
 
   "cardImage": "assets/images/psychoduck/kibodo/hero.png",
   "cardLogo": "assets/images/psychoduck/logo64x64.png",
-  "cardLogoStyle": "border: 2px solid var(--white); background-color: var(--black);",
+  "cardLogoStyle": "border: 2px solid var(--primary); background-color: var(--background);",
   "cardTags": [
     { "text": "Embedded Development", "link": null },
     { "text": "Electronics", "link": null },

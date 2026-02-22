@@ -2,7 +2,7 @@
   "title": "Nibunkatsu One",
   "subtitle": "にぶんかつ ✦ Nibunkatsu is the Japanese word for Splitting in Half",
   "description": "にぶんかつ ✦ A fully custom split keyboard!",
-  "lastUpdated": "Dec 2025",
+  "lastUpdated": "Feb 2026",
   "flags": ["hack-club", "in-progress"],
 
   "cardImage": "assets/images/nibunkatsu/hero.png",
@@ -22,17 +22,22 @@
     { "src": "assets/images/nibunkatsu/1.png", "alt": "Numpad Module"},
     { "src": "assets/images/nibunkatsu/2.png", "alt": "Schematics", "caption": "Schematics" },
     { "src": "assets/images/nibunkatsu/3.png", "alt": "PCB Design", "caption": "PCB design" },
-    { "src": "assets/images/nibunkatsu/4.png", "alt": "3D Render", "caption": "3D Render with CAD case design" }
+    { "src": "assets/images/nibunkatsu/4.png", "alt": "3D Render", "caption": "3D Render with CAD case design" },
+    { "src": "assets/images/nibunkatsu/5.png", "alt": "-", "caption": "-" },
+    { "src": "assets/images/nibunkatsu/8.png", "alt": "-", "caption": "-" },
+    { "src": "assets/images/nibunkatsu/9.png", "alt": "-", "caption": "-" },
+    { "src": "assets/images/nibunkatsu/10.png", "alt": "-", "caption": "-" },
+    { "src": "assets/images/nibunkatsu/11.png", "alt": "-", "caption": "-" }
   ],
 
   "content": [
     {
       "heading": "About Nibunkatsu",
-      "text": "Nibunkatsu is a compact split keyboard mainly designed for typing and programming. It was fully designed, engineered & planned out in only 7 days.\n\n Funded by Blueprint, a movement by Hack Club and AMD (yes, that AMD) to empower teenagers to build tech projects and actually bring them to life!"
+      "text": "Nibunkatsu is a split keyboard mainly designed for typing and programming. It was fully designed, engineered & planned out in only 7 days. Ordering and assemlby took part during the following weeks.\n\n The first iteration was funded by Blueprint, a movement by Hack Club and AMD (yes AMD) to empower teenagers to build tech projects and actually bring them to life!"
     },
     {
       "heading": "The Split Mechanism",
-      "text": "Although Nibunkatsu is not an innovation in any realms, it's a very cool concept which I've been aching to try for a while!\n\nBoth halves run the ESP32-S3 MCU, and communicate together using a 3.5mm TRRS cable."
+      "text": "Although Nibunkatsu is not an innovation in any realms, it's a very cool concept which I've been aching to try for a while!\n\nBoth halves run on the ESP32-S3 MCU, and communicate together ~~using a 3.5mm TRRS cable~~ by ESP-NOW. The original plan for communicating through the TRRS cable was scrapped due to having chosen an incorrect female connector, supporting only a TRS connection."
     },
     {
       "heading": "CAD Design",
