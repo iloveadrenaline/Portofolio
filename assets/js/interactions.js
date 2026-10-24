@@ -310,68 +310,49 @@ function wireWebringToggle() {
  */
 function wireKoFiWidget() {
   const trigger = document.getElementById('kofi-trigger');
-  const panel = document.getElementById('kofi-widget-panel');
-  const koFiWidgetUrl = 'https://ko-fi.com/gabibrawl/?hidefeed=true&widget=true&embed=true&preview=true';
+  if (!trigger) return;
 
-  if (!trigger || !panel) return;
+  trigger.href = 'https://ko-fi.com/andreibaciu';
+}
 
-  if (panel.parentElement !== document.body) {
-    document.body.appendChild(panel);
-  }
+/**
+ * Wires up the email copy button.
+ */
+function wireCopyEmail() {
+  const button = document.getElementById('copy-email');
+  if (!button || button._copyEmailWired) return;
+  button._copyEmailWired = true;
 
-  let isIframeLoaded = false;
+  button.addEventListener('click', async () => {
+    const email = button.dataset.email;
+    if (!email) return;
 
-  const ensureIframe = () => {
-    let iframe = panel.querySelector('#kofiframe');
-    if (iframe) return iframe;
+    try {
+      await navigator.clipboard.writeText(email);
+    } catch (error) {
+      const textArea = document.createElement('textarea');
+      textArea.value = email;
+      textArea.setAttribute('readonly', '');
+      textArea.style.position = 'fixed';
+      textArea.style.opacity = '0';
+      document.body.appendChild(textArea);
+      textArea.select();
+      const copied = document.execCommand('copy');
+      textArea.remove();
 
-    iframe = document.createElement('iframe');
-    iframe.id = 'kofiframe';
-    iframe.title = 'gabibrawl';
-    iframe.className = 'kofi-widget-frame';
-    iframe.loading = 'lazy';
-    iframe.addEventListener('load', () => {
-      isIframeLoaded = true;
-      panel.classList.remove('is-loading');
-    });
-    panel.appendChild(iframe);
-    return iframe;
-  };
-
-  const setOpen = (isOpen) => {
-    if (isOpen && !isIframeLoaded) {
-      const iframe = ensureIframe();
-      panel.classList.add('is-loading');
-      if (!iframe.getAttribute('src')) {
-        iframe.setAttribute('src', koFiWidgetUrl);
+      if (!copied) {
+        console.error('Unable to copy email:', error);
+        button.textContent = 'Copy failed';
+        return;
       }
     }
 
-    if (!isOpen) {
-      panel.classList.remove('is-loading');
-    }
-
-    panel.hidden = !isOpen;
-    panel.setAttribute('aria-busy', isOpen && !isIframeLoaded ? 'true' : 'false');
-    trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  };
-
-  trigger.addEventListener('click', (e) => {
-    e.preventDefault();
-    const isOpen = !panel.hidden;
-    setOpen(!isOpen);
-  });
-
-  document.addEventListener('click', (e) => {
-    if (panel.hidden) return;
-    if (trigger.contains(e.target) || panel.contains(e.target)) return;
-    setOpen(false);
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !panel.hidden) {
-      setOpen(false);
-    }
+    button.classList.add('copied');
+    button.textContent = 'Email copied!';
+    setTimeout(() => {
+      button.classList.remove('copied');
+      button.textContent = 'Copy my email';
+    }, 1800);
   });
 }
 

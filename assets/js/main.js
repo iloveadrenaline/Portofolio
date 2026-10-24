@@ -6,15 +6,14 @@
   // Initialize when DOM is ready
   document.addEventListener('DOMContentLoaded', () => {
     wireProjectHoverInteractions();
-    updateAge('age', CONFIG.BIRTH_DATE);
     wireTechScroller();
     wirePfpEffects();
-    wireEmailCopy();
     wireCommandPalette();
     wireCursorGrab();
     wireShowMoreSocials();
     wireWebringToggle();
     wireKoFiWidget();
+    wireCopyEmail();
     wireSecretDashboard();
   });
 

@@ -268,7 +268,7 @@
     // Preload adjacent images
     preloadAdjacentImages(gallery, currentIndex);
 
-    document.title = `${data.title} Gallery - Gabriel Yassin's Portfolio`;
+    document.title = `${data.title} Gallery - Andrei's Portfolio`;
   }
 
   function renderGalleryHTML(data, gallery, currentIndex) {

@@ -257,6 +257,25 @@ a.large {
   color: var(--background);
 }
 
+.copy-email {
+  display: block;
+  width: 100%;
+  margin: 0 0 10px;
+  color: var(--primary);
+  background: transparent;
+  padding: 10px;
+  border: 2px solid var(--primary);
+  text-align: center;
+  font: inherit;
+  cursor: url('../cursors/handpointing.svg') 10 5, pointer;
+}
+
+.copy-email:hover,
+.copy-email.copied {
+  background: var(--accent);
+  color: var(--background);
+}
+
 .social-row {
   display: flex;
   gap: 10px;

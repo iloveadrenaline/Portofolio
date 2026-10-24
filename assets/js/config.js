@@ -1,7 +1,6 @@
 // config.js - Configuration constants
 const CONFIG = {
-  EMAIL: 'contact@gabibrawl.dev',
-  BIRTH_DATE: '2007-01-29',
+  AGE: 15,
   BASE_URL: 'https://gabibrawl.dev/',
   MOBILE_BREAKPOINT: 885,
   TECH_SCROLLER_WORDS: [
