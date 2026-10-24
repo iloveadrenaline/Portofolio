@@ -1,33 +1,6 @@
 /* features.js - Complex features */
 
 /**
- * Wires up email copy functionality
- */
-function wireEmailCopy() {
-  const emailLink = document.getElementById('email-link');
-  if (!emailLink) return;
-
-  emailLink.addEventListener('click', async (e) => {
-    e.preventDefault();
-    const email = CONFIG.EMAIL;
-    try {
-      await navigator.clipboard.writeText(email);
-      const originalText = emailLink.textContent;
-      emailLink.textContent = 'Copied!';
-      emailLink.classList.add('copied');
-      setTimeout(() => {
-        emailLink.textContent = originalText;
-        emailLink.classList.remove('copied');
-      }, 2000);
-    } catch (err) {
-      console.error('Failed to copy email: ', err);
-      // Fallback: open mailto
-      window.location.href = `mailto:${email}`;
-    }
-  });
-}
-
-/**
  * Wires up the tech scroller efficiently using compositor-optimized CSS animations
  */
 function wireTechScroller() {
@@ -304,15 +277,10 @@ function wireCommandPalette() {
       response = 'User not in the sudoers file. This incident will be reported.';
     } else {
       switch(lowerCmd) {
-        case 'contact':
-          response = `Email: ${CONFIG.EMAIL}\nCopied to clipboard!`;
-          navigator.clipboard.writeText(CONFIG.EMAIL).catch(err => console.error('Failed to copy email:', err));
-          break;
         case 'help':
           response = 'Available commands:\n\n\
 Info:\n\
   whoami - Displays the user info\n\
-  contact - Copies email to clipboard\n\
   age - Displays age\n\
   qotd - Prints a random quote\n\n\
 Fun:\n\
@@ -327,10 +295,10 @@ This terminal:\n\
 Piping support: command | cowsay';
           break;
         case 'whoami':
-          response = 'GabiBrawl // Full-stack developer and electronics enthusiast';
+          response = 'Andrei // Electronics enthusiast';
           break;
         case 'age':
-          response = `${getAge()}y... for now`;
+          response = `${CONFIG.AGE}y... for now`;
           break;
         case 'qotd':
           response = qotd();
@@ -375,7 +343,7 @@ Piping support: command | cowsay';
       e.preventDefault();
       // Tab completion
       const currentValue = input.value.trim();
-      const commands = ['contact', 'whoami', 'sudo', 'age', 'qotd', 'cowsay', 'theme', 'help', 'clear', 'exit', 'cache'];
+      const commands = ['whoami', 'sudo', 'age', 'qotd', 'cowsay', 'theme', 'help', 'clear', 'exit', 'cache'];
       
       if (currentValue === '') {
         // Show all commands

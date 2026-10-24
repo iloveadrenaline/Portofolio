@@ -1,51 +1,42 @@
 {
-  "title": "Utsuwa Key",
-  "subtitle": "うつわ ✦ Utsuwa comes from the Japanese word for 'vessel', symbolizing a container for your digital soul",
-  "description": "うつわ ✦ A contactless FIDO-2 passkey storing device!",
-  "lastUpdated": "Dec 2025",
-  "flags": ["hack-club", "in-progress"],
-
-  "cardImage": "assets/images/utsuwa/hero.png",
+  "title": "PCB-Name-Card",
+  "subtitle": "A PCB name card with blinking LEDs",
+  "description": "A beginner-friendly PCB name card with labeled components, a QR code for contact information, and a keychain hole.",
+  "lastUpdated": "Sep 2026",
+  "cardImage": "assets/pcb-name-card/pcb-name-card-hero.png",
   "cardTags": [
-    { "text": "Hack Club", "link": null },
+    { "text": "KiCad", "link": null },
+    { "text": "PCB", "link": null },
     { "text": "Electronics", "link": null },
-    { "text": "Security", "link": null },
-    { "text": "OpenSource", "link": "https://github.com/GabiBrawl/Utsuwa" }
+    { "text": "GitHub", "link": "https://github.com/iloveadrenaline/PCB-Name-Card" }
   ],
-
-  "metaTitle": "Utsuwa Key - Gabriel Yassin's Portfolio",
-  "metaImage": "https://gabibrawl.github.io/Portfolio/assets/images/utsuwa/hero.png",
-
-  "gallery": [
-    { "src": "assets/images/utsuwa/hero.png", "alt": "Utsuwa Key"},
-    { "src": "assets/images/utsuwa/1.png", "alt": "PCB Top", "caption": "PCB Top" },
-    { "src": "assets/images/utsuwa/2.png", "alt": "PCB Bottom", "caption": "PCB Bottom" },
-    { "src": "assets/images/utsuwa/3.png", "alt": "PCB Design", "caption": "PCB design" },
-    { "src": "assets/images/utsuwa/4.png", "alt": "Schematics", "caption": "Schematics" }
-  ],
-
+  "metaTitle": "PCB-Name-Card - Andrei's Portfolio",
+  "metaImage": "https://gabibrawl.github.io/Portfolio/assets/pcb-name-card/pcb-name-card-hero.png",
   "content": [
     {
-      "heading": "Another Security Key",
-      "text": "A FIDO-2 Hardware passkey storing device that revolutionizes authentication with contactless technology. Unlike standard keys that use mechanical buttons (or exposed copper), **Utsuwa** employs __**Hall Effect Sensors**__, to enable secure authentication via magnetic rings or charms - eliminating physical contact and reducing wear.\n\nBuilt on the RP2354A microcontroller and open-source firmware, Utsuwa features custom PCB artwork, designed on Figma, by me. This device stores FIDO-2 passkeys securely while maintaining a sleek, modern form factor and unique design."
+      "heading": "About the PCB Name Card",
+      "text": "PCB-Name-Card is a name card made from a PCB. It shows a short overview and uses blinking LEDs."
     },
     {
       "heading": "Features",
       "list": [
-        "Hall Effect sensor for contactless authentication.",
-        "FIDO-2 compliant security architecture.",
-        "Custom-designed PCB with unique artwork.",
-        "Open-source firmware and hardware designs."
+        "Blinking LEDs",
+        "Labeled components",
+        "QR code for contact information",
+        "Keychain hole"
       ]
     },
     {
-      "heading": "Open Source",
-      "text": "Utsuwa is completely open-source, available on my GitHub."
+      "heading": "Components",
+      "list": [
+        "555 timer",
+        "Three THT LEDs",
+        "Three 470-ohm resistors",
+        "Two 4.7k-ohm resistors"
+      ]
     }
   ],
-
   "links": [
-    { "text": "View on GitHub", "href": "https://github.com/GabiBrawl/Utsuwa" },
-    { "text": "View on Blueprint", "href": "https://blueprint.hackclub.com/projects/6307" }
+    { "text": "View on GitHub", "href": "https://github.com/iloveadrenaline/PCB-Name-Card" }
   ]
 }

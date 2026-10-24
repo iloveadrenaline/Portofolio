@@ -2,8 +2,8 @@
 // CONFIGURATION & FLAGS
 // ==========================================================================
 const IS_DEVELOPMENT = false; // // ✦ SET TO TRUE FOR DEV, FALSE FOR PROD ✦
-const CACHE_NAME = 'portfolio-v6.0'; // Increment on deploys that should invalidate old caches
-const POSTS_COUNT = 6;
+const CACHE_NAME = 'portfolio-v6.4'; // Increment on deploys that should invalidate old caches
+const POSTS_COUNT = 4;
 const HASHES_URL = '/hashes.txt';
 const HASHES_STATE_KEY = '/__hashes_state__.json';
 

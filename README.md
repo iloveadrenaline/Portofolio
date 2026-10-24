@@ -1,7 +1,7 @@
-# My Portfolio ✦ さくひんしゅう
+# Andrei's Portfolio ✦ さくひんしゅう
 
 ![website preview](/assets/images/embed.png)
-A modern, interactive and opinionated portfolio by me, for me, showcasing my projects which I'm most proud of.
+A modern, interactive portfolio showcasing Andrei's electronics and hardware projects.
 
 ## Features
 
@@ -20,7 +20,6 @@ A modern, interactive and opinionated portfolio by me, for me, showcasing my pro
 
 See [LICENSE](LICENSE) file.
 
-## Contact
+## GitHub
 
-- **Email**: contact@gabibrawl.dev
-- **X (Twitter)**: [@GabiBrawl](https://x.com/GabiBrawl)
+- [@iloveadrenaline](https://github.com/iloveadrenaline)

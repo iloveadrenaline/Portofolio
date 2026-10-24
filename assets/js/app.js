@@ -179,11 +179,11 @@ let currentGalleryPreviewCount = null;
   }
 
   function renderProjectsListView(container) {
-    document.title = "Gabriel Yassin's Portfolio";
+    document.title = "Andrei's Portfolio";
     const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.content = "Gabi's Portfolio";
+    if (ogTitle) ogTitle.content = "Andrei's Portfolio";
     const ogDesc = document.querySelector('meta[property="og:description"]');
-    if (ogDesc) ogDesc.content = "Full-stack developer, programmer and electronics enthusiast building clean web pages and custom hardware.";
+    if (ogDesc) ogDesc.content = "Andrei's electronics projects and hardware builds.";
 
     const dynamicContent = document.getElementById('dynamic-content');
     dynamicContent.innerHTML = '<p style="padding: 40px; text-align: center;">Loading projects...</p>';
