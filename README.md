@@ -1,4 +1,4 @@
-# Andrei's Portfolio ✦ さくひんしゅう
+﻿# Andrei's Portfolio ✦ さくひんしゅう
 
 ![website preview](/assets/images/embed.png)
 A modern, interactive portfolio showcasing Andrei's electronics and hardware projects.
