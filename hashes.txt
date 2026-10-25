@@ -1,4 +1,3 @@
-33f48d806c2c4469676575817be129026eea90bd87adc28502584d402f831b29    /assets/images/embed.png
 35695bb0382c8f9ced18bf67a26ee86519caa1a658e67a3e59e707403af83523    /assets/cursors/handpointing.svg
 3a9c8974304deedfbbe0c62b7322a1bd531d75e0e2e6f0d8a1b53d2b84f7c69d    /favicon.png
 43a97952d3841fc5c181a190fd6e9cbc4a5b917cf92e9bdb95d43115031c08da    /index.html
@@ -18,6 +17,7 @@ bc68e117757bc31de2353efa6f71b463d3eb1b0ba17be5c378113fc9c464bdc9    /assets/css/
 bf4b8944baf21def758300b189706ff7b3f658e97d09cc7682197e7e56330fda    /assets/cursors/handopen.svg
 ca5d5db243f7e8373afb69765570b6ba326f1ebb2351076000184e3ccbe289af    /assets/js/app.js
 d8b15602e2f647a40d24d4376b3f77fd2f5c303b36790054e953ff0541d1678a    /assets/js/gallery.js
+daf6f91bb61f12bf49e8a2ed6a9bc8a721e2153eb3514678c8de15371aaa92ce    /assets/images/embed.png
 dbbabf2c7dd776609967233f6d0d1ffe20b3523ee54ae579abe6e91c03ada840    /assets/js/utils.js
 dbe9786910bc6917be5ce26619dc6d2ffba8c6e9b6a601986862d967f50a9205    /assets/css/project-detail.css
 e9141e4e03d7a7e9e7a87d3ceedf2da39bbaf033630974a1a8b20c39d84b898a    /assets/images/pfp400x400.jpg
