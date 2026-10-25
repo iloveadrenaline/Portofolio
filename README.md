@@ -1,6 +1,6 @@
-﻿# Andrei's Portfolio ✦ さくひんしゅう
+﻿# Andrei's Portfolio ✦
+<img width="1877" height="930" alt="image" src="https://github.com/user-attachments/assets/93368f93-7470-49ff-92e8-82709c7c31af" />
 
-![website preview](/assets/images/embed.png)
 A modern, interactive portfolio showcasing Andrei's electronics and hardware projects.
 
 ## Features
