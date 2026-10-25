@@ -95,7 +95,8 @@
                 <a href="https://github.com/iloveadrenaline" class="large" target="_blank" rel="noopener noreferrer">GitHub</a>
                 <a href="https://ko-fi.com/andreibaciu" class="large" target="_blank" rel="noopener noreferrer">Ko-fi</a>
             </div>
-            <button type="button" class="copy-email large" id="copy-email" data-email="baciuandrei901@gmail.com">Copy my email</button>
+            <button type="button" class="copy-email large" id="copy-email" data-email="baciuandrei901@gmail.com" aria-describedby="copy-email-status">Copy my email</button>
+            <span id="copy-email-status" class="sr-only" aria-live="polite"></span>
         </div>
     </div>
     <div class="main" id="main-content">
@@ -107,6 +108,27 @@
             </div>
             <div id="dynamic-content">
                 <!-- Content will be rendered here by app.js -->
+            </div>
+        </section>
+        <section class="contact-panel" id="contact" aria-labelledby="contact-title">
+            <div class="title-container">
+                <hr class="line left">
+                <h2 id="contact-title">About / Contact</h2>
+                <hr class="line right">
+            </div>
+            <div class="contact-grid">
+                <div class="contact-about">
+                    <p class="contact-kicker">STUDENT // DEVELOPER // HARDWARE ENTHUSIAST</p>
+                    <p>I'm a student from Romania interested in building things with code and electronics. I enjoy designing PCBs, exploring embedded systems and Linux, and turning ideas into real projects.</p>
+                    <p class="contact-status"><span aria-hidden="true">●</span> Open to learning, building, and interesting collaborations.</p>
+                </div>
+                <div class="contact-actions" aria-label="Contact links">
+                    <a href="mailto:baciuandrei901@gmail.com" class="contact-action">Email me</a>
+                    <button type="button" class="contact-action contact-copy" data-copy-target="copy-email">Copy email</button>
+                    <a href="https://github.com/iloveadrenaline" class="contact-action" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://ko-fi.com/andreibaciu" class="contact-action" target="_blank" rel="noopener noreferrer">Ko-fi</a>
+                    <a href="https://andreibaciu.me/" class="contact-action" target="_blank" rel="noopener noreferrer">Website</a>
+                </div>
             </div>
         </section>
         <footer><span class="line"></span></footer>

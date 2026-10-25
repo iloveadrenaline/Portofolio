@@ -323,9 +323,13 @@ function wireCopyEmail() {
   if (!button || button._copyEmailWired) return;
   button._copyEmailWired = true;
 
-  button.addEventListener('click', async () => {
+  async function copyEmail() {
     const email = button.dataset.email;
-    if (!email) return;
+    const status = document.getElementById('copy-email-status');
+    if (!email) {
+      if (status) status.textContent = 'Email address unavailable.';
+      return false;
+    }
 
     try {
       await navigator.clipboard.writeText(email);
@@ -343,16 +347,32 @@ function wireCopyEmail() {
       if (!copied) {
         console.error('Unable to copy email:', error);
         button.textContent = 'Copy failed';
-        return;
+        if (status) status.textContent = 'Copy failed. Select the email manually.';
+        return false;
       }
     }
 
     button.classList.add('copied');
     button.textContent = 'Email copied!';
+    if (status) status.textContent = 'Email address copied to clipboard.';
     setTimeout(() => {
       button.classList.remove('copied');
       button.textContent = 'Copy my email';
     }, 1800);
+    return true;
+  }
+
+  button.addEventListener('click', copyEmail);
+  document.querySelectorAll('[data-copy-target="copy-email"]').forEach(copyButton => {
+    copyButton.addEventListener('click', async () => {
+      const copied = await copyEmail();
+      copyButton.classList.toggle('is-copied', copied);
+      copyButton.textContent = copied ? 'Email copied!' : 'Copy failed';
+      window.setTimeout(() => {
+        copyButton.classList.remove('is-copied');
+        copyButton.textContent = 'Copy email';
+      }, 1800);
+    });
   });
 }
 

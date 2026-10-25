@@ -304,6 +304,9 @@ Portfolio:\n\
   projects - Show all projects\n\
   filter [tag] - Filter projects by tag\n\
   random - Open a random project\n\n\
+  contact - Jump to contact information\n\
+  email - Copy the public email address\n\
+  github - Open the GitHub profile\n\n\n\
 Fun:\n\
   scan - Run a short portfolio scan effect\n\
   cowsay [message] - Cow says a message\n\
@@ -347,6 +350,32 @@ Piping support: command | cowsay';
           triggerScanMode();
           response = 'Scanning portfolio surfaces...';
           break;
+        case 'contact':
+          {
+            const contactPanel = document.getElementById('contact');
+            if (contactPanel) {
+              contactPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              response = 'Contact panel located.';
+            } else {
+              response = 'Contact panel unavailable.';
+            }
+          }
+          break;
+        case 'email':
+          {
+            const copyButton = document.getElementById('copy-email');
+            if (copyButton) {
+              copyButton.click();
+              response = 'Copying public email address...';
+            } else {
+              response = 'Email action unavailable.';
+            }
+          }
+          break;
+        case 'github':
+          window.open('https://github.com/iloveadrenaline', '_blank', 'noopener,noreferrer');
+          response = 'Opening GitHub profile...';
+          break;
         case 'theme':
           toggleTheme();
           response = 'Enjoy! ^^';
@@ -387,7 +416,7 @@ Piping support: command | cowsay';
       e.preventDefault();
       // Tab completion
       const currentValue = input.value.trim();
-      const commands = ['whoami', 'sudo', 'age', 'qotd', 'projects', 'filter', 'random', 'scan', 'cowsay', 'theme', 'help', 'clear', 'exit', 'cache'];
+      const commands = ['whoami', 'sudo', 'age', 'qotd', 'projects', 'filter', 'random', 'contact', 'email', 'github', 'scan', 'cowsay', 'theme', 'help', 'clear', 'exit', 'cache'];
       
       if (currentValue === '') {
         // Show all commands
