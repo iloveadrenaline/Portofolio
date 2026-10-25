@@ -1,6 +1,7 @@
 33f48d806c2c4469676575817be129026eea90bd87adc28502584d402f831b29    /assets/images/embed.png
 35695bb0382c8f9ced18bf67a26ee86519caa1a658e67a3e59e707403af83523    /assets/cursors/handpointing.svg
 3a9c8974304deedfbbe0c62b7322a1bd531d75e0e2e6f0d8a1b53d2b84f7c69d    /favicon.png
+472596f5b1378c06f98e2fa362f266f4107a5cd190bf4052aba385eb2afe66ec    /assets/css/project-detail.css
 4ba418a261e382703382b59eac90d5f6e3a8bd6b1ded7962ca48fc9b3369a9ad    /assets/js/main.js
 5e83a3bdcbc419e4460161efc71fddd2416ab2051d5e17726f9a3a85ed967eaa    /assets/css/effects.css
 73a5028fa7ce93bc17ee0badaca236bbff67f1fb01b8360982a25d2fdf241a30    /assets/js/config.js
@@ -9,14 +10,13 @@
 8d346aecb3bca9572862958c8a71d8441ee065edd21f63db148f47b6a550363f    /assets/cursors/handgrabbing.svg
 914b695b12058aead2988502074c70eff5a2df56d00087777abb40b129944bfb    /assets/js/features.js
 95abb52c319a08f260fe8d2dcc52228a8153a9b0d7cb1d801e081c144c6be97d    /assets/css/gallery.css
-9ebfba5a86fdc22b55a21575af8c6571badc9d704058b79f3b9fa054677694a4    /assets/css/project-detail.css
 a26405f2eaebf4e19b71cb044c64604b7e5a7df4f7f206a75aaac9e22edf9662    /assets/music.json
-abb04d053ee6116bf9b35c998e20697a9bcdb73b32600f85486c240cae62ccc9    /assets/js/app.js
 ba2ee9724ac46bb8505f77f79ab72c921dfc4e8587785d49b1eb9ae59c87dfa4    /assets/images/pc.jpeg
 bc68e117757bc31de2353efa6f71b463d3eb1b0ba17be5c378113fc9c464bdc9    /assets/css/base.css
 bf4b8944baf21def758300b189706ff7b3f658e97d09cc7682197e7e56330fda    /assets/cursors/handopen.svg
 d8b15602e2f647a40d24d4376b3f77fd2f5c303b36790054e953ff0541d1678a    /assets/js/gallery.js
 dbbabf2c7dd776609967233f6d0d1ffe20b3523ee54ae579abe6e91c03ada840    /assets/js/utils.js
+e4e22bf2e4bde95784e734712afc504e9d5c7f7f414587bed4fa3945f9fbfd97    /assets/js/app.js
 e9141e4e03d7a7e9e7a87d3ceedf2da39bbaf033630974a1a8b20c39d84b898a    /assets/images/pfp400x400.jpg
 eea7cddc44f42172e066e6ddf0da79c7378e9fa2066e5d53161090ffe80ec35b    /assets/js/interactions.js
 f1a37626da2a279b48b61b1ed5882be184388e9a6c6bed4460f60c6d75f8dcc7    /index.html
