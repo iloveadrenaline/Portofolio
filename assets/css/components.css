@@ -249,16 +249,17 @@ a.large {
 }
 
 .socials a:hover {
-  background: var(--primary);
-  color: var(--background);
+  background: transparent;
+  color: var(--primary);
   border-color: var(--accent);
   transform: translateY(-2px) scale(1.015);
   box-shadow: 4px 4px 0 rgba(255, 171, 7, 0.18);
 }
 
 .socials a.copied {
-  background: var(--accent);
-  color: var(--background);
+  background: transparent;
+  color: var(--primary);
+  border-color: var(--accent);
 }
 
 .copy-email {
@@ -277,8 +278,8 @@ a.large {
 
 .copy-email:hover,
 .copy-email.copied {
-  background: var(--accent);
-  color: var(--background);
+  background: transparent;
+  color: var(--primary);
   border-color: var(--accent);
   transform: translateY(-2px) scale(1.015);
   box-shadow: 4px 4px 0 rgba(255, 171, 7, 0.18);
@@ -349,13 +350,15 @@ a.large {
   text-decoration: none;
   font: inherit;
   cursor: url('../cursors/handpointing.svg') 10 5, pointer;
+  transition: background 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
 }
 
 .contact-action:hover,
 .contact-action:focus-visible,
 .contact-action.is-copied {
-  background: var(--primary);
-  color: var(--background);
+  background: transparent;
+  color: var(--primary);
+  border-color: var(--accent);
   transform: translateY(-2px);
   box-shadow: 4px 4px 0 rgba(255, 171, 7, 0.2);
 }
