@@ -2,6 +2,10 @@
   "title": "Nouveau-Pad",
   "subtitle": "A 4-key macropad built around a Seeed XIAO RP2040",
   "description": "A compact macropad with four mechanical switches, an OLED display, a rotary encoder, and SK6812 MINI-E LEDs.",
+  "category": "Hardware",
+  "status": "Finished",
+  "year": "2026",
+  "nextProject": 1,
   "lastUpdated": "Oct 2026",
   "cardImage": "assets/nouveau-pad/Nouveau-Pad-Hero.png",
   "cardTags": [

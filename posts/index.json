@@ -10,6 +10,9 @@
       { "text": "Macropad", "link": null },
       { "text": "GitHub", "link": "https://github.com/iloveadrenaline/Nouveau-Pad" }
     ],
+    "category": "Hardware",
+    "status": "Finished",
+    "year": "2026",
     "flags": [],
     "lastUpdated": "Oct 2026"
   },
@@ -24,6 +27,9 @@
       { "text": "Alarm Clock", "link": null },
       { "text": "GitHub", "link": "https://github.com/iloveadrenaline/Minimalistic-Alarm-Clock" }
     ],
+    "category": "Hardware",
+    "status": "Finished",
+    "year": "2026",
     "flags": [],
     "lastUpdated": "Oct 2026"
   },
@@ -38,6 +44,9 @@
       { "text": "Electronics", "link": null },
       { "text": "GitHub", "link": "https://github.com/iloveadrenaline/PCB-Name-Card" }
     ],
+    "category": "PCB",
+    "status": "Finished",
+    "year": "2026",
     "flags": [],
     "lastUpdated": "Sep 2026"
   }

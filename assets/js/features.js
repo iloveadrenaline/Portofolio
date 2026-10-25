@@ -124,6 +124,13 @@ function wireCommandPalette() {
     }
   }
 
+  function triggerScanMode() {
+    document.body.classList.remove('scan-mode');
+    void document.body.offsetWidth;
+    document.body.classList.add('scan-mode');
+    window.setTimeout(() => document.body.classList.remove('scan-mode'), 1800);
+  }
+
   // Quote of the day — a small curated list of arcane/epic quotes
   const _qotdQuotes = CONFIG.QOTD_QUOTES;
 
@@ -298,6 +305,7 @@ Portfolio:\n\
   filter [tag] - Filter projects by tag\n\
   random - Open a random project\n\n\
 Fun:\n\
+  scan - Run a short portfolio scan effect\n\
   cowsay [message] - Cow says a message\n\
   sudo - Run a command as other user\n\
   theme - Toggle the secret theme\n\
@@ -334,6 +342,10 @@ Piping support: command | cowsay';
           } else {
             response = 'Project index is still loading.';
           }
+          break;
+        case 'scan':
+          triggerScanMode();
+          response = 'Scanning portfolio surfaces...';
           break;
         case 'theme':
           toggleTheme();
@@ -375,7 +387,7 @@ Piping support: command | cowsay';
       e.preventDefault();
       // Tab completion
       const currentValue = input.value.trim();
-      const commands = ['whoami', 'sudo', 'age', 'qotd', 'projects', 'filter', 'random', 'cowsay', 'theme', 'help', 'clear', 'exit', 'cache'];
+      const commands = ['whoami', 'sudo', 'age', 'qotd', 'projects', 'filter', 'random', 'scan', 'cowsay', 'theme', 'help', 'clear', 'exit', 'cache'];
       
       if (currentValue === '') {
         // Show all commands

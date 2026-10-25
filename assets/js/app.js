@@ -170,6 +170,9 @@ let activeProjectFilter = 'all';
           logo: entry.cardLogo,
           logoStyle: entry.cardLogoStyle,
           tags: entry.cardTags || [],
+          category: entry.category || 'Project',
+          status: entry.status || ((entry.flags || []).includes('in-progress') ? 'In progress' : 'Finished'),
+          year: entry.year || null,
           flags: entry.flags || [],
           lastUpdated: entry.lastUpdated || null
         }));
@@ -185,6 +188,8 @@ let activeProjectFilter = 'all';
     if (ogTitle) ogTitle.content = "Andrei's Portfolio";
     const ogDesc = document.querySelector('meta[property="og:description"]');
     if (ogDesc) ogDesc.content = "Andrei's electronics projects and hardware builds.";
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.href = `${window.location.origin}${window.location.pathname}`;
 
     const dynamicContent = document.getElementById('dynamic-content');
     dynamicContent.innerHTML = '<p style="padding: 40px; text-align: center;">Loading projects...</p>';
@@ -228,6 +233,11 @@ let activeProjectFilter = 'all';
               ${project.flags.includes('in-progress') ? '<span class="in-progress-badge">In Progress</span>' : ''}
               <h3>${project.title}</h3>
               <p>${project.description}</p>
+              <div class="project-card-meta" aria-label="Project metadata">
+                <span>${project.category}</span>
+                ${project.year ? `<span>${project.year}</span>` : ''}
+                <span>${project.status}</span>
+              </div>
               <div class="tags">
                 ${project.tags.map(tag =>
                   tag.link
@@ -300,7 +310,7 @@ let activeProjectFilter = 'all';
     }
 
     const data = loadedProjects[projectId];
-    updateMetaTags(data);
+    updateMetaTags(data, projectId);
 
     const sections = (data.content || []).map((section, i) => Object.assign({}, section, { id: `sec-${i}` }));
 
@@ -311,6 +321,11 @@ let activeProjectFilter = 'all';
           <div class="title-block">
             <h1>${data.title}</h1>
             <p class="project-subtitle">${data.subtitle}</p>
+            <div class="project-meta" aria-label="Project metadata">
+              <span>${data.category || 'Project'}</span>
+              ${data.year ? `<span>${data.year}</span>` : ''}
+              <span>${data.status || 'Finished'}</span>
+            </div>
             ${data.links && data.links.length > 0 ? `
             <div class="project-links">
               ${data.links.map(link => `<a href="${link.href}" target="_blank">${link.text}</a>`).join('')}
@@ -364,7 +379,15 @@ let activeProjectFilter = 'all';
     if (data.lastUpdated) {
       html += `<p class="project-last-updated">Last updated ${data.lastUpdated}</p>`;
     }
-    html += BACK_LINK_HTML;
+    const previousProject = Number.isInteger(data.previousProject) ? data.previousProject : null;
+    const nextProject = Number.isInteger(data.nextProject) ? data.nextProject : null;
+    html += `
+      <nav class="project-navigation" aria-label="Project navigation">
+        ${previousProject === null ? '<span class="project-navigation-placeholder"></span>' : `<a href="?post=${previousProject}" class="project-navigation-link">← Previous</a>`}
+        ${BACK_LINK_HTML}
+        ${nextProject === null ? '<span class="project-navigation-placeholder"></span>' : `<a href="?post=${nextProject}" class="project-navigation-link">Next →</a>`}
+      </nav>
+    `;
     html += '</div>';
 
     // Slim right-edge "tick marks" section nav — hover reveals the name, current section highlights on scroll
@@ -427,7 +450,7 @@ let activeProjectFilter = 'all';
     });
   }
 
-  function updateMetaTags(data) {
+  function updateMetaTags(data, projectId) {
     document.title = data.metaTitle;
 
     const setMetaContent = (selector, content) => {
@@ -445,6 +468,10 @@ let activeProjectFilter = 'all';
     setMetaContent('meta[property="twitter:description"]', data.description);
     setMetaContent('meta[property="twitter:image"]', data.metaImage);
     setMetaContent('meta[name="description"]', data.description);
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) {
+      canonical.href = `${window.location.origin}${window.location.pathname}?post=${encodeURIComponent(projectId)}`;
+    }
   }
 
 function wireInteractions() {

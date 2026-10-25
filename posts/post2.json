@@ -2,6 +2,10 @@
   "title": "PCB-Name-Card",
   "subtitle": "A PCB name card with blinking LEDs",
   "description": "A beginner-friendly PCB name card with labeled components, a QR code for contact information, and a keychain hole.",
+  "category": "PCB",
+  "status": "Finished",
+  "year": "2026",
+  "previousProject": 1,
   "lastUpdated": "Sep 2026",
   "cardImage": "assets/pcb-name-card/pcb-name-card-hero.png",
   "cardTags": [

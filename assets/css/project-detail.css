@@ -105,6 +105,39 @@
   letter-spacing: 1px;
 }
 
+.project-navigation {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.project-navigation .back-link {
+  position: static;
+  transform: none;
+  margin: 0;
+}
+
+.project-navigation-link {
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 10px 14px;
+  text-decoration: none;
+  font-family: "Special Gothic Condensed One", sans-serif;
+  text-align: center;
+}
+
+.project-navigation-link:hover,
+.project-navigation-link:focus-visible {
+  background: var(--primary);
+  color: var(--background);
+}
+
+.project-navigation-link:last-child {
+  justify-self: end;
+}
+
 .project-links {
   display: flex;
   gap: 15px;
@@ -733,6 +766,24 @@
   .project-meta {
     flex-direction: column;
     gap: 10px;
+  }
+
+  .project-navigation {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .project-navigation .back-link {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    justify-self: center;
+  }
+
+  .project-navigation-link {
+    grid-row: 2;
+  }
+
+  .project-navigation-link:last-child {
+    justify-self: stretch;
   }
 
   .gallery-strip {

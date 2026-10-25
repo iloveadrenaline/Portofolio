@@ -625,9 +625,50 @@ a.large {
   word-spacing: 1px;
 }
 
+.project-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 12px;
+  font-family: monospace;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.project-card-meta span {
+  border-left: 2px solid var(--accent);
+  padding-left: 6px;
+}
+
 .project:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: -2px;
+}
+
+body.scan-mode .project {
+  animation: project-scan 0.9s steps(2, end) both;
+}
+
+body.scan-mode .project:nth-child(2n) {
+  animation-delay: 120ms;
+}
+
+body.scan-mode .project:nth-child(3n) {
+  animation-delay: 240ms;
+}
+
+@keyframes project-scan {
+  0%,
+  100% {
+    filter: none;
+    transform: translateY(0);
+  }
+  50% {
+    filter: brightness(1.35);
+    transform: translateY(-3px);
+  }
 }
 
 .tags span, .tags a {
