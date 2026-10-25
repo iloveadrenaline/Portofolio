@@ -383,7 +383,8 @@ function wireCopyEmail() {
 function wireSecretDashboard() {
   const footer = document.querySelector('footer');
   const dashboard = document.getElementById('nerdy-dashboard');
-  if (!footer || !dashboard) return;
+  const secretMessage = document.getElementById('footer-secret-message');
+  if (!footer || !dashboard || !secretMessage) return;
 
   const diagnosticsPanels = [
     {
@@ -411,18 +412,29 @@ function wireSecretDashboard() {
   let clickCount = 0;
   let clickTimeout = null;
   let telemetryInterval = null; 
+  let messageTimeout = null;
 
-  footer.addEventListener('click', (e) => {
-    const isFooterTarget = e.target.closest('.gb') || e.target.classList.contains('line') || e.target.tagName === 'FOOTER';
-    if (!isFooterTarget) return;
+  function revealFooterSecret() {
+    secretMessage.textContent = '> hidden layer unlocked // welcome, curious human';
+    secretMessage.hidden = false;
+    secretMessage.classList.remove('is-visible');
+    void secretMessage.offsetWidth;
+    secretMessage.classList.add('is-visible');
+    clearTimeout(messageTimeout);
+    messageTimeout = setTimeout(() => {
+      secretMessage.classList.remove('is-visible');
+      setTimeout(() => { secretMessage.hidden = true; }, 300);
+    }, 3200);
+  }
 
-    e.preventDefault();
-    window.getSelection().removeAllRanges(); // Clears text selection highlights
-    
+  function countFooterInteraction() {
     clickCount++;
-
     clearTimeout(clickTimeout);
     clickTimeout = setTimeout(() => { clickCount = 0; }, 2500);
+
+    if (clickCount === 5) {
+      revealFooterSecret();
+    }
 
     if (clickCount === 7) {
       clickCount = 0;
@@ -437,16 +449,29 @@ function wireSecretDashboard() {
 
       document.getElementById('diag-clear-cache')?.addEventListener('click', clearCacheAndReload);
 
-      // Execute data pipelines
       fetchLatestCommit();
       populateStaticMetrics();
       populateCacheMetrics();
 
-      // Spin up background telemetry loop
       clearInterval(telemetryInterval); 
       updateLiveTelemetry(); 
       telemetryInterval = setInterval(updateLiveTelemetry, 1000);
     }
+  }
+
+  footer.addEventListener('click', (e) => {
+    const isFooterTarget = e.target.closest('.gb') || e.target.classList.contains('line') || e.target.tagName === 'FOOTER';
+    if (!isFooterTarget) return;
+
+    e.preventDefault();
+    window.getSelection().removeAllRanges(); // Clears text selection highlights
+    countFooterInteraction();
+  });
+
+  footer.addEventListener('keydown', (e) => {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    e.preventDefault();
+    countFooterInteraction();
   });
 
   function buildDiagnosticsDashboardMarkup(panels) {

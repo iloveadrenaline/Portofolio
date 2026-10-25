@@ -286,8 +286,8 @@ a.large {
 }
 
 .contact-panel {
-  margin-top: 50px;
-  padding: 30px 0 20px;
+  margin-top: 42px;
+  padding: 26px 0 18px;
   border-top: 2px solid var(--primary);
   scroll-margin-top: 20px;
 }
@@ -297,7 +297,7 @@ a.large {
   grid-template-columns: minmax(0, 1.4fr) minmax(240px, 0.8fr);
   gap: 30px;
   border: 2px solid var(--primary);
-  padding: 24px;
+  padding: 22px;
 }
 
 .contact-kicker {
@@ -340,11 +340,32 @@ a.large {
 .contact-action.is-copied {
   background: var(--primary);
   color: var(--background);
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0 rgba(255, 171, 7, 0.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project,
+  .project-stack span,
+  .skills-group,
+  .contact-action {
+    transition: none;
+  }
+
+  .project:hover .project-stack span,
+  .project:focus-visible .project-stack span,
+  .skills-group:hover,
+  .skills-group:focus-within,
+  .contact-action:hover,
+  .contact-action:focus-visible,
+  .contact-action.is-copied {
+    transform: none;
+  }
 }
 
 .skills-panel {
-  margin-top: 50px;
-  padding: 30px 0 20px;
+  margin-top: 42px;
+  padding: 26px 0 18px;
   border-top: 2px solid var(--primary);
 }
 
@@ -357,6 +378,14 @@ a.large {
 .skills-group {
   border: 2px solid var(--primary);
   padding: 16px;
+  transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.skills-group:hover,
+.skills-group:focus-within {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 6px 6px 0 rgba(255, 171, 7, 0.12);
 }
 
 .skills-group h3 {
@@ -645,13 +674,15 @@ a.large {
   cursor: url('../cursors/handpointing.svg') 10 5, pointer;
   position: relative;
   padding: 20px;
-  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.2s ease, box-shadow 0.2s ease;
   will-change: transform;
 }
 
 .project:hover,
 .project.is-hovered {
   z-index: 5;
+  border-color: var(--accent);
+  box-shadow: 8px 8px 0 rgba(255, 171, 7, 0.16);
 }
 
 .project img {
@@ -742,6 +773,14 @@ a.large {
   border: 1px solid var(--primary);
   padding: 3px 6px;
   opacity: 0.75;
+  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.project:hover .project-stack span,
+.project:focus-visible .project-stack span {
+  background: var(--primary);
+  color: var(--background);
+  transform: translateY(-2px);
 }
 
 .project:focus-visible {
@@ -786,6 +825,22 @@ body.scan-mode .project:nth-child(3n) {
 
 /* Mobile project grid */
 @media (max-width: 768px) {
+  .title-container {
+    margin-bottom: 14px;
+  }
+
+  .title-container .line {
+    width: 36px;
+  }
+
+  .project-grid {
+    gap: 14px;
+  }
+
+  .project {
+    padding: 16px;
+  }
+
   .project-controls {
     align-items: flex-start;
     flex-direction: column;
@@ -802,11 +857,17 @@ body.scan-mode .project:nth-child(3n) {
 
   .contact-grid {
     grid-template-columns: 1fr;
-    padding: 18px;
+    gap: 18px;
+    padding: 16px;
   }
 
   .skills-grid {
     grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .skills-group {
+    padding: 13px;
   }
 
   .contact-actions {

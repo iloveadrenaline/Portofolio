@@ -37,12 +37,58 @@ footer {
   justify-content: center;
   background-color: var(--background);
   color: var(--primary);
+  gap: 10px;
 }
 
 .line {
   flex: 1;
   height: 2px;
   background: var(--primary);
+}
+
+.footer-secret-mark {
+  color: var(--accent);
+  font-family: monospace;
+  font-size: 18px;
+  opacity: 0.7;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+footer:hover .footer-secret-mark,
+footer:focus-visible .footer-secret-mark {
+  opacity: 1;
+  transform: rotate(90deg) scale(1.3);
+}
+
+footer:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.footer-secret-message {
+  width: fit-content;
+  max-width: 100%;
+  margin: 12px auto 0;
+  padding: 10px 14px;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  background: var(--background);
+  font: 12px monospace;
+  opacity: 0;
+  transform: translateY(8px) scale(0.96);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.footer-secret-message.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-secret-mark,
+  .footer-secret-message {
+    transition: none;
+  }
 }
 
 /* Mobile Layout */
@@ -57,6 +103,8 @@ footer {
 
   .main {
     margin-left: 0;
+    padding-left: 16px;
+    padding-right: 16px;
     padding-top: 0;
     min-height: auto;
   }
@@ -64,6 +112,12 @@ footer {
   footer {
     left: 0;
     margin-top: 20px;
+  }
+
+  .footer-secret-message {
+    margin-left: 16px;
+    margin-right: 16px;
+    text-align: center;
   }
 }
 /* 𝕲 // 𝕭 Typography & Haptic Cleanups */

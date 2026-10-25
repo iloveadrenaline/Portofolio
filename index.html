@@ -156,10 +156,15 @@
                 </div>
             </div>
         </section>
-        <footer><span class="line"></span></footer>
+        <footer tabindex="0" role="button" aria-label="Portfolio footer secret">
+            <span class="line"></span>
+            <span class="footer-secret-mark" aria-hidden="true">+</span>
+            <span class="line"></span>
+        </footer>
         
         <!-- ✦ NERDY HIDDEN DIAGNOSTICS DASHBOARD ✦ -->
         <div id="nerdy-dashboard" class="nerdy-dashboard" hidden></div>
+        <div id="footer-secret-message" class="footer-secret-message" role="status" aria-live="polite" hidden></div>
     </div>
     <script src="assets/js/utils.js" defer></script>
     <script src="assets/js/config.js" defer></script>
