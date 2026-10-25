@@ -23,7 +23,7 @@
     "description": "A compact 4-key alarm clock built around a Seeed XIAO ESP32-C3.",
     "cardImage": "assets/alarm-clock/Minimalistic-Alarm-Clock-Hero.png",
     "cardTags": [
-      { "text": "C++", "link": null },
+      { "text": "Python", "link": null },
       { "text": "Electronics", "link": null },
       { "text": "Alarm Clock", "link": null },
       { "text": "GitHub", "link": "https://github.com/iloveadrenaline/Minimalistic-Alarm-Clock" }
@@ -31,7 +31,7 @@
     "category": "Hardware",
     "status": "Finished",
     "year": "2026",
-    "stack": ["XIAO ESP32-C3", "C++", "TFT", "KiCad"],
+    "stack": ["XIAO ESP32-C3", "Python", "TFT", "KiCad"],
     "flags": [],
     "lastUpdated": "Oct 2026"
   },
