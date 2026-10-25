@@ -45,11 +45,6 @@ footer {
   background: var(--primary);
 }
 
-.gb {
-  margin: 0 10px;
-  font-size: 24px;
-}
-
 /* Mobile Layout */
 @media (max-width: 885px) {
   .sidebar {
