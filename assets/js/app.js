@@ -9,6 +9,7 @@ const loadedProjects = {};
 window.loadedProjects = loadedProjects;
 let cachedProjects = null;
 let currentGalleryPreviewCount = null;
+let activeProjectFilter = 'all';
 
   // Constants
   const BACK_LINK_HTML = '<a href="#" class="back-link" onclick="history.pushState(null, \'\', window.location.pathname); window.renderContent(); window.wireInteractions(); return false;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M19 12H5M12 19l-7-7 7-7"></svg>Back to Portfolio</a>';
@@ -202,13 +203,27 @@ let currentGalleryPreviewCount = null;
       }
       const validProjects = projects.filter(p => p !== null);
 
-      let html = `<div class="project-grid">`;
+      const filters = ['all', ...new Set(validProjects.flatMap(project => project.tags.map(tag => tag.text).filter(Boolean)))];
+      let html = `
+        <div class="project-controls" aria-label="Project filters">
+          <span class="project-controls-label">FILTER:</span>
+          <div class="project-filters" role="group">
+            ${filters.map(filter => `
+              <button type="button" class="project-filter${activeProjectFilter === filter ? ' is-active' : ''}" data-filter="${filter}" aria-pressed="${activeProjectFilter === filter}">
+                ${filter === 'all' ? 'All' : filter}
+              </button>
+            `).join('')}
+          </div>
+          <span class="project-count" aria-live="polite"></span>
+        </div>
+        <div class="project-grid">`;
 
       validProjects.forEach(project => {
-        if (!project.flags.includes('disabled')) {
+        const matchesFilter = activeProjectFilter === 'all' || project.tags.some(tag => tag.text === activeProjectFilter);
+        if (!project.flags.includes('disabled') && matchesFilter) {
           html += `
-            <div class="project" data-project-id="${project.id}" tabindex="0" role="button" aria-label="Open ${project.title}">
-              <img src="${project.image}" alt="Project Image" width="400" height="200" loading="lazy" decoding="async">
+            <div class="project" data-project-id="${project.id}" data-project-title="${project.title}" tabindex="0" role="button" aria-label="Open ${project.title}">
+              <img src="${project.image}" alt="${project.title} project preview" width="400" height="200" loading="lazy" decoding="async">
               ${project.logo ? `<img class="project-logo" src="${project.logo}" alt="Project Logo" style="${project.logoStyle}">` : ''}
               ${project.flags.includes('in-progress') ? '<span class="in-progress-badge">In Progress</span>' : ''}
               <h3>${project.title}</h3>
@@ -229,6 +244,18 @@ let currentGalleryPreviewCount = null;
 
       const dynamicContent = document.getElementById('dynamic-content');
       dynamicContent.innerHTML = html;
+      const visibleCount = validProjects.filter(project =>
+        !project.flags.includes('disabled') &&
+        (activeProjectFilter === 'all' || project.tags.some(tag => tag.text === activeProjectFilter))
+      ).length;
+      const count = dynamicContent.querySelector('.project-count');
+      if (count) count.textContent = `${visibleCount} project${visibleCount === 1 ? '' : 's'}`;
+      dynamicContent.querySelectorAll('.project-filter').forEach(button => {
+        button.addEventListener('click', () => {
+          activeProjectFilter = button.dataset.filter || 'all';
+          renderProjectsListView(container);
+        });
+      });
 
       setTimeout(() => {
         wireInteractions();
@@ -246,6 +273,19 @@ let currentGalleryPreviewCount = null;
       `;
     });
   }
+
+  window.filterProjects = function (filter = 'all') {
+    activeProjectFilter = filter;
+    const view = getViewMode();
+    if (view.mode === 'projects') renderProjectsListView(document.getElementById('main-content'));
+  };
+
+  window.openRandomProject = function () {
+    const cards = [...document.querySelectorAll('.project[data-project-id]')];
+    if (!cards.length) return;
+    const card = cards[Math.floor(Math.random() * cards.length)];
+    navigateToProject(card.dataset.projectId);
+  };
 
   function renderProjectView(container, projectId) {
     if (!container) {

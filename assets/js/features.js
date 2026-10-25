@@ -275,6 +275,16 @@ function wireCommandPalette() {
     let lowerCmd = cmd.toLowerCase();
     if (lowerCmd.startsWith('sudo')) {
       response = 'User not in the sudoers file. This incident will be reported.';
+    } else if (lowerCmd.startsWith('filter ')) {
+      const filter = cmd.slice('filter'.length).trim();
+      if (typeof window.filterProjects === 'function') {
+        window.history.pushState(null, '', window.location.pathname);
+        window.renderContent();
+        window.filterProjects(filter);
+        response = `Filtering projects by: ${filter}`;
+      } else {
+        response = 'Project index is still loading.';
+      }
     } else {
       switch(lowerCmd) {
         case 'help':
@@ -283,6 +293,10 @@ Info:\n\
   whoami - Displays the user info\n\
   age - Displays age\n\
   qotd - Prints a random quote\n\n\
+Portfolio:\n\
+  projects - Show all projects\n\
+  filter [tag] - Filter projects by tag\n\
+  random - Open a random project\n\n\
 Fun:\n\
   cowsay [message] - Cow says a message\n\
   sudo - Run a command as other user\n\
@@ -302,6 +316,24 @@ Piping support: command | cowsay';
           break;
         case 'qotd':
           response = qotd();
+          break;
+        case 'projects':
+          if (typeof window.filterProjects === 'function') {
+            window.history.pushState(null, '', window.location.pathname);
+            window.renderContent();
+            window.filterProjects('all');
+            response = 'Showing all projects.';
+          } else {
+            response = 'Project index is still loading.';
+          }
+          break;
+        case 'random':
+          if (typeof window.openRandomProject === 'function') {
+            window.openRandomProject();
+            response = 'Selecting a project...';
+          } else {
+            response = 'Project index is still loading.';
+          }
           break;
         case 'theme':
           toggleTheme();
@@ -343,7 +375,7 @@ Piping support: command | cowsay';
       e.preventDefault();
       // Tab completion
       const currentValue = input.value.trim();
-      const commands = ['whoami', 'sudo', 'age', 'qotd', 'cowsay', 'theme', 'help', 'clear', 'exit', 'cache'];
+      const commands = ['whoami', 'sudo', 'age', 'qotd', 'projects', 'filter', 'random', 'cowsay', 'theme', 'help', 'clear', 'exit', 'cache'];
       
       if (currentValue === '') {
         // Show all commands

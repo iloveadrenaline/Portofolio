@@ -7,8 +7,10 @@ A modern, interactive portfolio showcasing Andrei's electronics and hardware pro
 
 - **Responsive Design**: Optimized for desktop and mobile devices
 - **Interactive Elements**: Hover effects, particle animations, and easter eggs
+- **Project Discovery**: Filter projects by technology and open a random project
 - **Command Palette**: Terminal-style interface with fun commands (Ctrl+K to open)
-- **Performance**: Optimized loading with preconnects, preloads, and deferred scripts
+- **Accessibility**: Keyboard-friendly controls and reduced-motion support
+- **Performance**: Optimized loading with preconnects, preloads, deferred scripts, and responsive behavior
 
 ## Technologies Used
 

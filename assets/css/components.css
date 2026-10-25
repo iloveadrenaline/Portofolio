@@ -506,6 +506,51 @@ a.large {
   gap: 20px;
 }
 
+.project-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.project-controls-label,
+.project-count {
+  font-family: monospace;
+  font-size: 12px;
+  letter-spacing: 1px;
+  opacity: 0.7;
+}
+
+.project-filters {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  padding-bottom: 2px;
+}
+
+.project-filter {
+  flex: 0 0 auto;
+  border: 1px solid var(--primary);
+  background: transparent;
+  color: var(--primary);
+  padding: 6px 10px;
+  font: inherit;
+  font-size: 12px;
+  cursor: url('../cursors/handpointing.svg') 10 5, pointer;
+}
+
+.project-filter:hover,
+.project-filter.is-active {
+  background: var(--primary);
+  color: var(--background);
+}
+
+.project-count {
+  margin-left: auto;
+}
+
 .project {
   background: var(--background);
   border: 2px solid var(--primary);
@@ -598,12 +643,37 @@ a.large {
 
 /* Mobile project grid */
 @media (max-width: 768px) {
+  .project-controls {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .project-filters {
+    width: 100%;
+  }
+
+  .project-count {
+    margin-left: 0;
+  }
+
   .project-grid {
     grid-template-columns: 1fr;
   }
 
   .project img {
     height: 160px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
