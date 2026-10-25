@@ -287,7 +287,6 @@ async function cacheAllAssetsInSW() {
     '/assets/starW.svg',
     '/assets/music.json',
     '/assets/button88x31.png',
-    '/assets/flag-orpheus-top.svg'
   ];
 
   const uniqueAssets = [...new Set(assetsToCache)];

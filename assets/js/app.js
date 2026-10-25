@@ -317,7 +317,6 @@ let activeProjectFilter = 'all';
     let html = `
 <div class="project-detail">
         <div class="project-header">
-          ${data.flags && data.flags.includes('hack-club') ? '<img src="assets/flag-orpheus-top.svg" alt="Hack Club Flag" class="hack-club-flag">' : ''}
           <div class="title-block">
             <h1>${data.title}</h1>
             <p class="project-subtitle">${data.subtitle}</p>

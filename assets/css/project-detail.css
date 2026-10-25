@@ -15,16 +15,6 @@
   overflow: hidden;
 }
 
-.hack-club-flag {
-  position: absolute;
-  top: 0px;
-  left: 40px;
-  width: 130px;
-  height: auto;
-  animation: wave 2s ease-in-out infinite;
-  transform-origin: top center;
-}
-
 .title-block {
   text-align: center;
 }
