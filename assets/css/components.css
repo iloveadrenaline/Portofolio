@@ -240,6 +240,7 @@
   padding: 10px;
   border: 2px solid var(--primary);
   text-align: center;
+  transition: background 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
 }
 
 div.social-row,
@@ -250,6 +251,9 @@ a.large {
 .socials a:hover {
   background: var(--primary);
   color: var(--background);
+  border-color: var(--accent);
+  transform: translateY(-2px) scale(1.015);
+  box-shadow: 4px 4px 0 rgba(255, 171, 7, 0.18);
 }
 
 .socials a.copied {
@@ -268,12 +272,16 @@ a.large {
   text-align: center;
   font: inherit;
   cursor: url('../cursors/handpointing.svg') 10 5, pointer;
+  transition: background 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
 }
 
 .copy-email:hover,
 .copy-email.copied {
   background: var(--accent);
   color: var(--background);
+  border-color: var(--accent);
+  transform: translateY(-2px) scale(1.015);
+  box-shadow: 4px 4px 0 rgba(255, 171, 7, 0.18);
 }
 
 .social-row {
@@ -298,6 +306,14 @@ a.large {
   gap: 30px;
   border: 2px solid var(--primary);
   padding: 22px;
+  transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+}
+
+.contact-grid:hover,
+.contact-grid:focus-within {
+  border-color: var(--accent);
+  box-shadow: 8px 8px 0 rgba(255, 171, 7, 0.12);
+  transform: translateY(-2px);
 }
 
 .contact-kicker {
@@ -345,6 +361,20 @@ a.large {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .socials a,
+  .copy-email,
+  .contact-grid {
+    transition: none;
+  }
+
+  .socials a:hover,
+  .copy-email:hover,
+  .copy-email.copied,
+  .contact-grid:hover,
+  .contact-grid:focus-within {
+    transform: none;
+  }
+
   .project,
   .project-stack span,
   .skills-group,
