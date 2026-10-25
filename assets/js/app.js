@@ -173,6 +173,7 @@ let activeProjectFilter = 'all';
           category: entry.category || 'Project',
           status: entry.status || ((entry.flags || []).includes('in-progress') ? 'In progress' : 'Finished'),
           year: entry.year || null,
+          stack: entry.stack || [],
           flags: entry.flags || [],
           lastUpdated: entry.lastUpdated || null
         }));
@@ -238,6 +239,7 @@ let activeProjectFilter = 'all';
                 ${project.year ? `<span>${project.year}</span>` : ''}
                 <span>${project.status}</span>
               </div>
+              ${project.stack.length ? `<div class="project-stack" aria-label="Technology stack">${project.stack.map(item => `<span>${item}</span>`).join('')}</div>` : ''}
               <div class="tags">
                 ${project.tags.map(tag =>
                   tag.link
@@ -325,6 +327,7 @@ let activeProjectFilter = 'all';
               ${data.year ? `<span>${data.year}</span>` : ''}
               <span>${data.status || 'Finished'}</span>
             </div>
+            ${data.stack && data.stack.length ? `<div class="project-stack project-detail-stack" aria-label="Technology stack">${data.stack.map(item => `<span>${item}</span>`).join('')}</div>` : ''}
             ${data.links && data.links.length > 0 ? `
             <div class="project-links">
               ${data.links.map(link => `<a href="${link.href}" target="_blank">${link.text}</a>`).join('')}

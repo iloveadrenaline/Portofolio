@@ -5,6 +5,7 @@
   "category": "Hardware",
   "status": "Finished",
   "year": "2026",
+  "stack": ["XIAO RP2040", "CircuitPython", "KiCad", "OLED"],
   "nextProject": 1,
   "lastUpdated": "Oct 2026",
   "cardImage": "assets/nouveau-pad/Nouveau-Pad-Hero.png",
@@ -15,7 +16,7 @@
     { "text": "GitHub", "link": "https://github.com/iloveadrenaline/Nouveau-Pad" }
   ],
   "metaTitle": "Nouveau-Pad - Andrei's Portfolio",
-  "metaImage": "https://gabibrawl.github.io/Portfolio/assets/nouveau-pad/Nouveau-Pad-Hero.png",
+  "metaImage": "https://andreibaciu.me/assets/nouveau-pad/Nouveau-Pad-Hero.png",
   "content": [
     {
       "heading": "About Nouveau-Pad",

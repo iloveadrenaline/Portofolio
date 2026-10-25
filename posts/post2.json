@@ -5,6 +5,7 @@
   "category": "PCB",
   "status": "Finished",
   "year": "2026",
+  "stack": ["KiCad", "555 timer", "THT components", "LEDs"],
   "previousProject": 1,
   "lastUpdated": "Sep 2026",
   "cardImage": "assets/pcb-name-card/pcb-name-card-hero.png",
@@ -15,7 +16,7 @@
     { "text": "GitHub", "link": "https://github.com/iloveadrenaline/PCB-Name-Card" }
   ],
   "metaTitle": "PCB-Name-Card - Andrei's Portfolio",
-  "metaImage": "https://gabibrawl.github.io/Portfolio/assets/pcb-name-card/pcb-name-card-hero.png",
+  "metaImage": "https://andreibaciu.me/assets/pcb-name-card/pcb-name-card-hero.png",
   "content": [
     {
       "heading": "About the PCB Name Card",

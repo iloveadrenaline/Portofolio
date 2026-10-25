@@ -95,6 +95,11 @@
   letter-spacing: 1px;
 }
 
+.project-detail-stack {
+  justify-content: center;
+  margin: 18px 0;
+}
+
 .project-navigation {
   display: grid;
   grid-template-columns: 1fr auto 1fr;

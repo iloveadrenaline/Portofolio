@@ -3,4 +3,4 @@ Allow: /
 Disallow: /discord/
 Disallow: /404.html
 
-Sitemap: https://www.gabibrawl.dev/sitemap.xml
+Sitemap: https://andreibaciu.me/sitemap.xml

@@ -1,7 +1,7 @@
 // config.js - Configuration constants
 const CONFIG = {
   AGE: 15,
-  BASE_URL: 'https://gabibrawl.dev/',
+  BASE_URL: 'https://andreibaciu.me/',
   MOBILE_BREAKPOINT: 885,
   TECH_SCROLLER_WORDS: [
     'LINUX BTW', 'SKZ', 'C++', 'C', 'JOOSTICE', 'VS CODE', 'GIT', 'CYBERSEC',

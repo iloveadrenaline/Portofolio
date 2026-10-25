@@ -5,6 +5,7 @@
   "category": "Hardware",
   "status": "Finished",
   "year": "2026",
+  "stack": ["XIAO ESP32-C3", "C++", "TFT", "KiCad"],
   "previousProject": 0,
   "nextProject": 2,
   "lastUpdated": "Oct 2026",
@@ -16,7 +17,7 @@
     { "text": "GitHub", "link": "https://github.com/iloveadrenaline/Minimalistic-Alarm-Clock" }
   ],
   "metaTitle": "Minimalistic-Alarm-Clock - Andrei's Portfolio",
-  "metaImage": "https://gabibrawl.github.io/Portfolio/assets/alarm-clock/Minimalistic-Alarm-Clock-Hero.png",
+  "metaImage": "https://andreibaciu.me/assets/alarm-clock/Minimalistic-Alarm-Clock-Hero.png",
   "content": [
     {
       "heading": "About the Alarm Clock",

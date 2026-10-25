@@ -342,6 +342,36 @@ a.large {
   color: var(--background);
 }
 
+.skills-panel {
+  margin-top: 50px;
+  padding: 30px 0 20px;
+  border-top: 2px solid var(--primary);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.skills-group {
+  border: 2px solid var(--primary);
+  padding: 16px;
+}
+
+.skills-group h3 {
+  margin: 0 0 10px;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.skills-group p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
 .tools-placeholder {
   flex: 1;
   display: block;
@@ -699,6 +729,21 @@ a.large {
   padding-left: 6px;
 }
 
+.project-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 0 0 12px;
+  font-family: monospace;
+  font-size: 11px;
+}
+
+.project-stack span {
+  border: 1px solid var(--primary);
+  padding: 3px 6px;
+  opacity: 0.75;
+}
+
 .project:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: -2px;
@@ -758,6 +803,10 @@ body.scan-mode .project:nth-child(3n) {
   .contact-grid {
     grid-template-columns: 1fr;
     padding: 18px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
   }
 
   .contact-actions {
